@@ -1,0 +1,7 @@
+.padTo {
+  display: block;
+  padding: 0.3rem;
+  border: 1px solid;
+  margin: 0.1rem;
+  color: blue;
+}

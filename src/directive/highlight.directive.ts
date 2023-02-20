@@ -19,9 +19,9 @@ export class HighlightDirective implements OnChanges, OnInit, AfterViewInit {
   ngAfterViewInit(): void {}
   ngOnInit(): void {
     this.originalText = this.elementRef.nativeElement.innerHTML;
-    console.log('or:', this.originalText);
   }
   ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
     if (changes.highlightText.firstChange) {
       this.originalText = this.elementRef.nativeElement.innerText;
     } else {
@@ -35,9 +35,10 @@ export class HighlightDirective implements OnChanges, OnInit, AfterViewInit {
       // this.elementRef.nativeElement.innerHTML = newText;
       this.renderer.setProperty(
         this.elementRef.nativeElement,
-        'innerText',
+        'innerHTML',
         newText
       );
     }
   }
+  
 }
